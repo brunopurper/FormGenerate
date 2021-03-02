@@ -16,8 +16,40 @@
             <option value="3">Teste 3</option>
             <option value="4">Teste 4</option>
         </select>
-
         <button>Send</button>
     </form>
+
+
+<?php
+require_once 'formGenerate.php';
+
+/*
+ATRIBUTOS PARA O CONSTRUTOR
+action, method, enctype
+
+*/
+
+$arrAtributos = [
+    'action' => 'index.php',
+    'method' => 'POST',
+    'enctype' => 'multipart/form-data'
+];
+
+$objForm = new formGenerate($arrAtributos);
+
+$objForm->addInput([
+    'type' => 'text',
+    'name' => 'nome',
+    'placeholder' => 'nome',
+    'id' => 'nome'
+]);
+
+$objForm->addSelect();
+$objForm->addP();
+
+$objForm->renderForm()
+
+?>
+
 </body>
 </html>

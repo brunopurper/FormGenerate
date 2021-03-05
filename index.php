@@ -47,7 +47,7 @@ $objForm->addInput([
 $objForm->addSelect();
 $objForm->addP();
 
-$objForm->renderForm()
+$objForm->renderForm();
 
 ?>
 
